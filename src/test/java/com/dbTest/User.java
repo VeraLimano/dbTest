@@ -1,10 +1,27 @@
 package com.dbTest;
 
-public class User {
+import javax.persistence.*;
+//import javax.persistence.Entity;
+//
+//import javax.persistence.Column;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
+@Entity
+@Table(name = "user1")
+public class User {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "lastName")
     private String lastName;
+
+    @Column(name = "age")
     private Byte age;
 
     public User() {

@@ -1,9 +1,21 @@
 package com.dbTest;
 import java.sql.*;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+
+//import com.infotech.util.Util;
 
 public class Solution {
     public static void main(String[] args) {
-        DaoImpl dao = new DaoImpl();
+        HibernateImp dao = new HibernateImp();
+//        DaoImpl dao = new DaoImpl();
+        Util util = new Util();
+
+
+//        dao.removeUserById(2);
 
         dao.createUsersTable();
 
@@ -17,6 +29,11 @@ public class Solution {
        dao.cleanUsersTable();
 
        dao.dropUsersTable();
+
+//
+
+//        util.getSessionFactory().close();
+//        System.out.println(util.getSessionFactory().isClosed());
     }
 }
 
